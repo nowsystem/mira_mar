@@ -15,78 +15,114 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            /* Estilos nuevos para el botón de WhatsApp */
+            .whatsapp-btn {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                z-index: 9999;
+                background: #25D366;
+                color: white;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+            
+            .whatsapp-btn:hover {
+                background: #128C7E;
+                transform: scale(1.1) rotate(10deg);
+            }
+            
+            .whatsapp-btn i {
+                font-size: 28px;
+            }
+        </style>
     </head>
     <body id="page-top">
       
-        <!-- Portfolio Section-->
+        <!-- Sección de imágenes original preservada -->
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
-            <img class="img-fluid" src="assets/img/portfolio/1.png" alt="..." />
+            <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
             <div class="divider-custom-line"></div>
         </div>
 
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
-            <img class="img-fluid" src="assets/img/portfolio/2.png" alt="..." />
+            <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
             <div class="divider-custom-line"></div>
         </div>
 
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
-            <img class="img-fluid" src="assets/img/portfolio/3.png" alt="..." />
+            <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
             <div class="divider-custom-line"></div>
         </div>
 
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
-            <img class="img-fluid" src="assets/img/portfolio/4.png" alt="..." />
+            <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
             <div class="divider-custom-line"></div>
         </div>
 
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
-            <img class="img-fluid" src="assets/img/portfolio/5.png" alt="..." />
+            <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
             <div class="divider-custom-line"></div>
         </div>
 
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
-            <img class="img-fluid" src="assets/img/portfolio/6.png" alt="..." />
+            <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
             <div class="divider-custom-line"></div>
         </div>
 
-    
-        
-
-        <!-- Conmact Section-->
-        
         <!-- Footer-->
         <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <a href=""><img class="img-fluid" src="assets/img/portfolio/instagram.png" alt="..." /></a>
-                </div>
-            </div>
+            
         </footer>
+
+        <!-- Botón de WhatsApp agregado al final del body -->
+        <div class="whatsapp-btn" onclick="enviarMensajeYDescargar()">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; <a href="https://nowsystem.github.io/web/">NOWSYSTEM</a>  2025 - <a href="https://wa.me/5930979403793?text=Hola,%20estoy%20interesado%20en%20tu%20servicio" target="_blank">
+            <div class="container"><small>Copyright &copy; <a href="www.nowsystem.net">NOWSYSTEM</a> 2025 - 
+                <a href="https://wa.me/593983172995?text=Hola,%20estoy%20interesado%20en%20tu%20servicio" target="_blank">
                 0979403793
               </a></small></div>
         </div>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        
-        <!-- Portfolio Modal 2-->
-       
-        <!-- Bootstrap core JS-->
+
+        <!-- Scripts nuevos agregados al final -->
+        // Versión alternativa con confirmación
+       <script>
+        function enviarMensajeYDescargar() {
+            if (confirm('¿Deseas abrir WhatsApp y descargar el menú?')) {
+                window.open(`https://wa.me/5930979403793?text=${encodeURIComponent('Hola, quiero hacer un pedido')}`, '_blank');
+                
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = 'menu.pdf';
+                    link.download = 'Menu.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }, 1000);
+            }
+        }
+</script> 
+        <!-- Scripts originales preservados -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
